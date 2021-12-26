@@ -14,10 +14,14 @@ const Cart = (props) => {
   const hasItems = cartCtx.items.length > 0;
 
   // 장바구니 아이템 삭제
-  const cartItemRemoveHandler = (id) => {};
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
 
   // 장바구니 아이템 추가
-  const cartItemAddHandler = (item) => {};
+  const cartItemAddHandler = (item) => {
+    cartCtx.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul className={classes["cart-items"]}>
